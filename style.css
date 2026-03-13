@@ -95,7 +95,7 @@ nav a:hover::after {
 /* ===== HERO ===== */
 .hero {
     text-align: center;
-    padding: 160px 20px;
+    padding: 60px 20px;
     position: relative;
 }
 
@@ -108,7 +108,7 @@ nav a:hover::after {
 }
 
 .hero p {
-    max-width: 720px;
+    max-width: 1000px;
     margin: auto;
     font-size: 20px;
     color: var(--light-text);
@@ -247,7 +247,7 @@ nav a:hover::after {
 }
 
 .setor-desc {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto 60px;
     text-align: center;
     color: var(--light-text);
@@ -313,7 +313,7 @@ nav a:hover::after {
 
 .badge.vice {
     top: 25px;
-    right: 25px;
+    right: 35px;
 }
 
 /* ===== AJUSTES PARA INTEGRANTES ===== */

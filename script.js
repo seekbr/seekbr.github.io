@@ -10,3 +10,26 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => console.error("Erro ao carregar o header:", err));
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const fallback = "/assets/images/template.jpg";
+
+  document.querySelectorAll("img").forEach(img => {
+
+    function fallbackImage() {
+      if (!img.src.includes("template.jpg")) {
+        img.src = fallback;
+      }
+    }
+
+    img.onerror = fallbackImage;
+
+    // se já falhou antes do script rodar
+    if (img.complete && img.naturalWidth === 0) {
+      fallbackImage();
+    }
+
+  });
+
+});
