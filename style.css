@@ -518,3 +518,71 @@ footer p {
     font-size: 14px;
     opacity: 0.8;
 }
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 20px 60px;
+  }
+
+  .hero h2 {
+    font-size: 36px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 40px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .button {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .team {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .member {
+    padding: 30px 20px;
+  }
+
+  .carousel-container {
+    padding: 20px 10px 40px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .carousel-item {
+    width: 150px;
+    margin: 0 8px;
+    scroll-snap-align: start;
+  }
+
+  .carousel-item img {
+    width: 80px;
+    height: 80px;
+  }
+
+  section {
+    padding: 60px 16px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
