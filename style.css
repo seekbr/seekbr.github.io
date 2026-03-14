@@ -182,6 +182,50 @@ nav a:hover::after {
     font-size: 22px;
 }
 
+/* ===== SOBRE ===== */
+
+.sobre-card {
+  display: block;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: var(--light-text);
+  box-shadow: var(--shadow);
+  border: 2px solid transparent;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.sobre-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--yellow);
+  box-shadow: 0 20px 40px rgba(249, 200, 14, 0.25);
+}
+
+.sobre-card p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.button-link {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--yellow), var(--yellow-light));
+  color: #2a0f4a;
+  font-weight: 700;
+  padding: 10px 28px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.sobre-card:hover .button-link {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(249, 200, 14, 0.3);
+}
+
 /* ===== EQUIPE ===== */
 .team {
     display: grid;
@@ -312,8 +356,73 @@ nav a:hover::after {
 }
 
 .badge.vice {
-    top: 25px;
-    right: 35px;
+    top: 16px;
+    right: 45px;
+}
+
+/* ===== AJUSTES PARA INTEGRANTES ===== */
+
+.carousel-container {
+  overflow-x: auto;
+  overflow-y: visible; /* garante que nada seja cortado verticalmente */
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding: 30px 20px 30px; /* mais espaço embaixo */
+  margin: 0;
+}
+
+.setor {
+  overflow: visible; /* evita que o carrossel seja cortado dentro da seção */
+}
+
+.carousel-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.carousel-container::-webkit-scrollbar-thumb {
+  background: var(--yellow);
+  border-radius: 4px;
+}
+
+.carousel-item {
+  display: inline-block;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  text-align: center;
+  padding: 20px;
+  margin: 0 12px; /* espaço entre os cards */
+  box-shadow: var(--shadow);
+  transition: 0.3s;
+  width: 200px;
+  vertical-align: top;
+}
+
+.carousel-item:first-child {
+  margin-left: 10px; /* respiro no início */
+}
+
+.carousel-item:last-child {
+  margin-right: 10px; /* respiro no fim */
+}
+
+.carousel-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px rgba(249, 200, 14, 0.25);
+}
+
+.carousel-item img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid var(--yellow);
+}
+
+.carousel-item p {
+  color: var(--light-text);
+  font-size: 15px;
+  white-space: normal;
 }
 
 /* ===== AJUSTES PARA INTEGRANTES ===== */
@@ -357,7 +466,8 @@ nav a:hover::after {
 
 .integrante p {
     color: var(--light-text);
-    font-size: 15px;
+    font-size: 14px;
+    font-weight:600;
 }
 
 /* ===== RESPONSIVIDADE ===== */
