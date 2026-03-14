@@ -50,46 +50,117 @@ section {
 
 /* ===== HEADER ===== */
 header {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
-    text-align: center;
-    padding: 40px 20px;
-    border-bottom: 3px solid var(--yellow);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 3px solid var(--yellow);
 }
 
 header h1 {
-    font-size: 38px;
-    font-weight: 700;
-    color: var(--yellow);
-    letter-spacing: 1px;
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--yellow);
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+/* ===== HEADER CONTENT ===== */
+.header-content {
+  display: flex;
+  flex-direction: column; /* empilha o título e o menu */
+  align-items: center;
 }
 
 /* ===== NAVBAR ===== */
 nav {
-    margin-top: 15px;
+  margin-top: 10px;
 }
 
 nav a {
-    color: var(--text);
-    text-decoration: none;
-    margin: 0 18px;
-    font-weight: 600;
-    position: relative;
-    transition: 0.3s;
+  color: var(--text);
+  text-decoration: none;
+  margin: 0 18px;
+  font-weight: 600;
+  position: relative;
+  transition: 0.3s;
 }
 
 nav a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: var(--yellow);
-    left: 0;
-    bottom: -4px;
-    transition: 0.3s;
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: var(--yellow);
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
 }
 
 nav a:hover::after {
+  width: 100%;
+}
+
+/* ===== MENU RESPONSIVO ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--yellow);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Estado ativo (animação do X) */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .header-content {
+    align-items: flex-start;
+  }
+
+  nav {
+    display: none;
     width: 100%;
+    flex-direction: column;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 2px solid var(--yellow);
+    margin-top: 15px;
+    padding: 20px 0;
+  }
+
+  nav a {
+    display: block;
+    margin: 12px 0;
+    font-size: 18px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-self: flex-end;
+  }
 }
 
 /* ===== HERO ===== */
@@ -584,5 +655,70 @@ footer p {
 
   p {
     font-size: 16px;
+  }
+}
+
+/* ===== HEADER RESPONSIVO ===== */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--yellow);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Estado ativo (animação do X) */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* ===== NAVBAR ===== */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-top: 2px solid var(--yellow);
+    margin-top: 15px;
+    padding: 20px 0;
+  }
+
+  nav a {
+    display: block;
+    margin: 12px 0;
+    font-size: 18px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 }
